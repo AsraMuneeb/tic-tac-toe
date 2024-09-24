@@ -1,0 +1,246 @@
+#root {
+  margin: 0;
+  height: 100%;
+}
+
+@font-face{
+  font-family: h1font;
+  src: url(assets/fonts/Handjet-Regular.ttf);
+}
+
+@font-face{
+  font-family: pfont;
+  src: url(assets/fonts/EduSABeginner-Regular.ttf);
+}
+
+@font-face{
+  font-family: p2font;
+  src: url(assets/fonts/ArchivoBlack-Regular.ttf);
+}
+
+img{
+  width: 25%;
+  height: 15%;
+  position: absolute;
+  left: 37%;
+  top: 7%;
+  margin: auto;
+}
+
+.symbol{
+  font-family: p2font;
+  font-size: 1.3vw;
+}
+
+.game-box{
+  position:absolute;
+  background-color: rgba(29, 28, 23, 0.788);
+  opacity: 1;
+  border-radius: 25px;
+  border-color: rgba(255, 255, 255, 0.808);
+  border-width: 3px;
+  border-style: solid;
+  top: 30%;
+  left: 32%;
+  width: 35%;
+  height: 60%;
+  box-shadow: rgba(255, 255, 255, 0.502) 0px 50px 100px -20px, rgba(255, 255, 255, 0.562) 0px 30px 60px -30px;
+}
+
+h1{
+  position:absolute;
+  top: 16%;
+  left: 44%;
+  font-size: 3vw;
+  font-family: h1font;
+}
+
+.player-name{
+  width: 70%;
+  height: 100%;
+  font-family: pfont;
+}
+
+.list{
+  list-style-type: none;
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0;
+  margin:0;
+  width: 100%;
+  height: 17%;
+}
+
+.cells p{
+  font-size: 2.4vw;
+  font-family: p2font;
+  color:rgb(246, 190, 7);
+  margin:auto;
+}
+
+video{
+  position: absolute;
+  z-index: -99999;
+}
+
+input{
+  width: 60%;
+  background: none;
+  border: transparent;
+}
+
+input:focus{
+  border: transparent;
+  background: none;
+}
+
+.game-board{
+  width: 60%;
+  height: 70%;
+  background-color: none;
+  margin: 5% auto;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  opacity:1;
+}
+
+.row{
+  list-style-type: none;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  margin:auto;
+}
+
+.save-btn{
+  height: 90%;
+  width: 25%;
+  background-color: #fcd256;
+  border: none;
+  border-radius: 2px;
+  color: black;
+}
+
+.cells{
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+  background-color:aliceblue;
+  box-shadow: rgba(255, 255, 255, 0.25) 0px 50px 100px -20px, rgba(255, 255, 255, 0.3) 0px 30px 60px -30px, rgba(51, 41, 10, 0.854) 0px -2px 6px 0px inset;
+  border: none;
+  color: black;
+  border-radius: 5%;
+}
+
+.cells:hover{
+  box-shadow: rgba(255, 183, 0, 0.55) 0px 5px 15px ,rgba(237, 221, 126, 0.25) 0px 50px 100px -20px, rgba(255, 255, 255, 0.3) 0px 30px 60px -30px, rgba(233, 206, 124, 0.854) 0px -2px 6px 0px inset;
+  border: 3px solid rgb(237, 206, 96);
+  background-color: #100e0362;
+}
+
+.col{
+  display: flex;
+  list-style-type: none;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.row li{
+  width: 100%;
+  height: calc(100%/3);
+}
+
+.col li{
+  height: 100%;
+  width: calc(100%/3);
+}
+
+.player{
+  width: 40%;
+  height: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.edit{
+  display: inline-flex;
+  justify-content: center;
+  border-color:rgb(235, 183, 13);
+  border-style: solid;
+  background-color:#fcd2566a;
+  width: 60%;
+  height: 100%;
+  border-width: 1.5px;
+  font-family: pfont;
+  font-size: 1.2vw;
+  padding:0;
+}
+
+.not-edit{
+  display: inline-flex;
+  justify-content: center;
+  width: 60%;
+  height: 100%;
+  border-color:rgb(255, 255, 255);
+  border-style: solid;
+  border-width: 1px;
+  font-family: pfont;
+  font-size: 1.2vw;
+  padding:0;
+
+}
+
+#game-over {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 23px;
+  background-color: rgba(21, 17, 3, 0.9);
+  animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.65, 0.52) forwards;
+}
+
+#game-over h2 {
+  font-family: h1font;
+  font-size: 5vw;
+  text-align: center;
+  color: #fcd256;
+  margin: 0;
+}
+
+#game-over p {
+  font-size: 2vw;
+  font-family: pfont;
+  text-align: center;
+  color: #e1dec7;
+}
+
+#game-over button {
+  display: block;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  background: none;
+  border: 2px solid #ffffff;
+  color: #fcd256;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s, color 0.2s;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+#game-over button:hover {
+  background: #fcd256;
+  color: #3f3b00;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 187, 0, 0.8);
+}

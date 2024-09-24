@@ -1,0 +1,127 @@
+javascript review:-
+function parameters (
+    function name (n, age = 12)     //i am defining default paarmeter here if user didnt give any value for age the age will be 12
+        console.log(n, age)
+)
+
+the return works in function just like in python
+
+DESTRUCTURING
+i can assign values of an array to variables like this (const [first, last] = ['asra','muneeb'])
+
+FOR loop 
+if we want the item but not the index in for loop ( for (const i of hobbies))
+
+(const new = [...hobies]) will pull out hobbies array values separately with commas and store it separately in new array 
+for importing all functions of a js file write import * as any-name from "./app.js"
+
+REFFERENCE AND PRIMITIVE
+The main difference lies in how they store data. Primitives store the actual value directly, 
+making them memory-efficient and faster to access i.e. ('asra', 28, true) becuase they cannot be change or eidited but they can redefine
+Reference types store memory addresses, enabling them to reference complex objects and share data across different program parts
+i.e. lists and objects(dictionary are objects in js)
+
+ARROW FUNCTIONS
+Arrow functions are a different way of creating functions in JavaScript. Besides a shorter syntax, they offer 
+advantages when it comes to keeping the scope of the this  keyword.
+
+function callMe(name) { 
+    console.log(name);
+}
+which you could also write as:
+
+const callMe = function(name) { 
+    console.log(name);
+}
+becomes: 
+
+const callMe = (name) => { 
+    console.log(name);
+}
+
+make it more simple to understand
+const variable = i => i   // it will return i simple basically it is use to return watever is in function
+
+------- REACT -------
+React is known for its component-based architecture which allows you to create reusable UI elements, 
+making complex web applications easier to manage and maintain.
+we can also import images in a varible so that we dont have to write whole path. i.e. import image from '/img1.png'
+
+-> COMPONENTS NAMES
+should be start with first letter capital so that the react can know that it is custom component not a built-in one,
+becuase all html tags starts with small letter.
+
+-> DYNAMIC CONTENT
+we can create dynamic content by using {variable} curly braces with any js variable in any html tag content  
+i.e. <h1> {username} </h1> or as an html tag attribute i.e. <img src={username}>
+
+-> PROPS
+react allows you to pass data to components via a concept called props
+its the only parameter passed in our function i.e. function concept(props){} instead of props we can use any word
+
+props cannot be modified they are immutable unchangable
+
+object destructuring in react is to use objects keys as parameters in a function instead of using props parameter
+function components(title, description){} instead of function components(props){}
+
+react merges all props attributes in a single object i.e. <Component tile='book' description='english book' /> 
+(its a custom html tag) react will make an object containing title and description and pass it to props variable 
+then these attributes can be used as props.title and props.description like we do in class.
+
+-> NAMES (variables, objects name)
+in react for importing an object fron one file to another 
+import {variable name} from "./components"  use name with curly braces.
+
+to call all elements of an object 
+{...components[0]} use 3 ...
+
+-> CHILDREN VS ATTRIBUTES 
+children in react is the content written between your custom tags i.e. 
+<Components>any content here will be save in a react variable name children</Components>
+function Components({children}){ return {children}}
+
+-> REACT HOOKS
+built-in functions of reacts starting with 'use-' can only be called inside react components, 
+they must be called at the top of the component functions should not be nestedwith other statements, 
+they trigger the component function they are in when something got updated to again run the function for example
+import {useState} from 'react'
+
+useState can store a default value thay you want react to return at first for example
+useState('please click a button')
+it will alsways return exactly 2 elements in form of array
+const [ a, b] = useState('plaese click on a button') here b will be the function will be use 
+to pass the updated value and a will be the updated value and will be used to display in our content
+
+-> RENDRING CONTENT CONDITIONALLY
+i did it so that befor clicking on any button click on a button can be displayed instead of any button content
+{!selected topic? <p>hello</p> : <p> goodbye </p>} ! maens not and ? means true, if its true then run p tag, 
+: means otherwise render goodbye or null if you want nothing, its like else statement
+
+2nd way is to use of statement
+let selected topic = 'hello';
+if (selected topic){
+    <p>goodbye</p>
+}
+then call selected topic variable anywhere in your html main code.
+
+to access each array item one by one we can use .map() to call each item i.e. 
+{array-name.map(any-new-variable)=>(<component {...any-new-variable}/)}
+there should be a unique key value pass as a prop so that list items can be identified uniquely i.e.
+{array-name.map(any-new-variable)=>(<component key={any-new-variable.title} {...any-new-variable}/)} 
+becuase titles are different mostly
+
+-> HTML TAGS ATTRIBUTES CANNOT BE passed
+<Custom id='example' /> if i want this to be passed as an id attribute to html tags present in this custom tag 
+it cannot be doen like this because props should be defined explicitly, you should explicitly mention id prop in 
+your component and then use that as prop i.e. function Component({id}){<section id={id}></section>}
+
+if i want to pass built in html tags attributes like id or class from component we can use ...props or any name 
+with ... this will collect all remaining attributes of custom tag and save them in an object and then we can do this
+<Custom id='example' blah='anything' />
+function Custom({blah, ...props}){
+    <section {...props} ></section>      this will pass id (remaining att) to section tag  
+}
+
+-> two-way binding
+its whenever input field changes the react useState will automatically updates each character 
+onChange={} is the att for input field it trigers when input fields changes, we can call functions in it 
