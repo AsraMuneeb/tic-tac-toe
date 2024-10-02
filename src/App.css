@@ -37,9 +37,9 @@ img{
   background-color: rgba(29, 28, 23, 0.788);
   opacity: 1;
   border-radius: 25px;
-  border-color: rgba(255, 255, 255, 0.808);
+  /* border-color: rgba(255, 255, 255, 0.808);
   border-width: 3px;
-  border-style: solid;
+  border-style: solid; */
   top: 35%;
   left: 35%;
   width: 30%;
@@ -94,6 +94,9 @@ input:focus{
   border: transparent;
   background: none;
 }
+
+
+
 
 .game-board{
   width: 60%;
