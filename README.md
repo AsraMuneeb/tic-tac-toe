@@ -38,6 +38,3 @@ Add a Scoreboard to track the number of wins for each player.
 Single-Player Mode with an AI opponent.
 Smooth Animations for better user experience.
 
-🎥 Project Demo
-Check out a demo of the project here.
-
